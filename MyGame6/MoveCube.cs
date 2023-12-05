@@ -20,7 +20,26 @@ namespace MyGame6
 
         public override void Update()
         {
-            // Do stuff every new frame
+            const float moveAmmount = 0.1f;
+            var position = Entity.Transform.Position;
+            if(Input.IsKeyDown(Keys.Left))
+            {
+                position.X -= moveAmmount;
+            }
+            else if(Input.IsKeyDown(Keys.Right))
+            {
+                position.X += moveAmmount;
+            }
+            if(Input.IsKeyDown(Keys.Up))
+            {
+                position.Z -= moveAmmount;
+            }
+            else if(Input.IsKeyDown(Keys.Down))
+            {
+                position.Z += moveAmmount;
+            }
+            Entity.Transform.Position = position;
+            Entity.Transform.UpdateLocalFromWorld();
         }
     }
 }

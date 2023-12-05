@@ -63,6 +63,8 @@ Hierarchy:
                                 Size: {X: 10.0, Y: 1.0, Z: 10.0}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    eb4d0df2f69c1a1b8430e39e9b27136c: !MyGame6.MoveCube,MyGame6
+                        Id: 6600c9c0-41ab-457d-b1e3-4835f7374fdb
         -   Entity:
                 Id: 5552ccb5-45c2-427d-8fe9-f87485a09eb3
                 Name: Sphere
@@ -103,8 +105,8 @@ Hierarchy:
                 Components:
                     9f88fee8886abb8174237bcdab09e278: !TransformComponent
                         Id: 6e2a6757-a69a-4896-98bb-12d18074c223
-                        Position: {X: 5.0, Y: 3.0, Z: 0.0}
-                        Rotation: {X: 0.0, Y: 0.70710677, Z: 0.0, W: 0.70710677}
+                        Position: {X: 0.0, Y: 3.0, Z: 5.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     1459193c6996d8b5f8d158417cba3f2a: !CameraComponent
