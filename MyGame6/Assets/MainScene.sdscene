@@ -1,0 +1,156 @@
+!SceneAsset
+Id: 5542ab9d-9f01-4c8b-bb8c-ad592fb5c32f
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+ChildrenIds: []
+Offset: {X: 0.0, Y: 0.0, Z: 0.0}
+Hierarchy:
+    RootParts:
+        - ref!! 84301a7a-7701-4df3-a260-8f078499a431
+        - ref!! be81d42f-54e3-442c-bf96-52da04b53b00
+        - ref!! f235994f-0b95-4976-8d3d-3957c9b26c22
+        - ref!! 083efd5c-e0ba-4b1e-96b2-67df70c17c85
+        - ref!! 5552ccb5-45c2-427d-8fe9-f87485a09eb3
+        - ref!! 108efcfe-b86e-4155-ab62-4ecb2102add5
+    Parts:
+        -   Entity:
+                Id: 083efd5c-e0ba-4b1e-96b2-67df70c17c85
+                Name: Ground
+                Components:
+                    1e7ec636d4871dd9a38c55db576e81a8: !TransformComponent
+                        Id: c9a55108-427d-4639-a633-d1f2a78d7a6c
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    ea68ef0601d9c087089393e986bacc74: !ModelComponent
+                        Id: c56c9c0c-d565-410c-b95f-116aba67d056
+                        Model: ed3e837a-eafe-4506-adb8-4c811f96f990:Ground
+                        Materials: {}
+        -   Entity:
+                Id: 108efcfe-b86e-4155-ab62-4ecb2102add5
+                Name: Cube
+                Components:
+                    28c471b137d3560e1c44430cec915b36: !TransformComponent
+                        Id: 0ba0a65e-612f-4baa-9d1b-60f155c2de1e
+                        Position: {X: 0.0, Y: 1.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    d26ba07c84d04af35e763c26a19a7ecc: !ModelComponent
+                        Id: 659694a9-d156-4969-a70f-e3d3ddb59212
+                        Model: e3a6f02a-0692-46d2-9a7b-2599214f1ef8:Cube
+                        Materials: {}
+                    fee544cfc54d957a36962a8c8cd18b0c: !RigidbodyComponent
+                        Id: c62937a3-3a79-4182-8d6b-ccf3a552218f
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: true
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: false
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            7b2a672e2fe867cea6a4d50f6ef2bb44: !BoxColliderShapeDesc
+                                Is2D: false
+                                Size: {X: 10.0, Y: 1.0, Z: 10.0}
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+        -   Entity:
+                Id: 5552ccb5-45c2-427d-8fe9-f87485a09eb3
+                Name: Sphere
+                Components:
+                    cd09f3a2271ce35bdcec2492d276a8dc: !TransformComponent
+                        Id: d9b8f535-fd3b-40ef-8f55-b695272d20a6
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    722960cdafffae7f09790f221bca42e1: !ModelComponent
+                        Id: dfde37b8-9d1c-4512-9233-6aed5eab6e3b
+                        Model: 4372914f-4bd4-41eb-b1c2-efc6ef2b11a0:Sphere
+                        Materials: {}
+                    a6ad609b15f61132428bfa78317a72a8: !RigidbodyComponent
+                        Id: a1518d00-3571-4115-ac1d-45da0d99df3c
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: false
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: false
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            a540dce7a33d5adfe0f840a5d0019e0e: !SphereColliderShapeDesc
+                                Is2D: false
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+        -   Entity:
+                Id: 84301a7a-7701-4df3-a260-8f078499a431
+                Name: Camera
+                Components:
+                    9f88fee8886abb8174237bcdab09e278: !TransformComponent
+                        Id: 6e2a6757-a69a-4896-98bb-12d18074c223
+                        Position: {X: 5.0, Y: 3.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.70710677, Z: 0.0, W: 0.70710677}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    1459193c6996d8b5f8d158417cba3f2a: !CameraComponent
+                        Id: 85e1e6ae-05ad-4fe4-8be4-d23a02b2315a
+                        Name: null
+                        Projection: Perspective
+                        Slot: bdbd31fd-7e40-4f1b-8501-f6319e40a1b6
+        -   Entity:
+                Id: be81d42f-54e3-442c-bf96-52da04b53b00
+                Name: Directional light
+                Components:
+                    c20208b42937350a06abd062bf95b0c8: !TransformComponent
+                        Id: cc033fc0-f469-41fe-b6ba-9fa25fdee0e7
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6eefce233d130290dd48d9ce6efcd750: !LightComponent
+                        Id: b07b550b-30a8-4a2c-99bb-10a1a7e95edc
+                        Type: !LightDirectional
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Shadow: !LightDirectionalShadowMap
+                                Enabled: true
+                                Filter: !LightShadowMapFilterTypePcf
+                                    FilterSize: Filter5x5
+                                Size: Large
+                                DepthRange: {}
+                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
+                                ComputeTransmittance: false
+                                BiasParameters: {}
+                        Intensity: 20.0
+        -   Entity:
+                Id: f235994f-0b95-4976-8d3d-3957c9b26c22
+                Name: Skybox
+                Components:
+                    af42c9e828c392fe3031dfb5b5c72024: !TransformComponent
+                        Id: c55f5031-9f43-4688-b89e-917e7b9c1808
+                        Position: {X: 0.0, Y: 2.0, Z: -2.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    5682fe156c9ce43dfae52be51569da44: !BackgroundComponent
+                        Id: d7afe513-4a1f-4235-8198-ee973d7497ee
+                        Texture: e7afc06b-62e2-442e-bfa3-4a5e747808c6:Skybox texture
+                    22c022b004643c0dbdaf377463c17a1e: !LightComponent
+                        Id: 2d6ac373-6ca4-45ce-a2cf-c01540fa5573
+                        Type: !LightSkybox
+                            Skybox: 68626e35-b71e-4a20-94a6-63c13e2a2bc6:Skybox
