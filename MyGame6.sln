@@ -1,3 +1,4 @@
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
@@ -5,6 +6,8 @@ MinimumVisualStudioVersion = 16.0.0.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGame6.Windows", "MyGame6.Windows\MyGame6.Windows.csproj", "{29ABB46B-F56F-4228-AAC0-641395A280CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGame6", "MyGame6\MyGame6.csproj", "{C6F431C2-7448-4FB2-8603-09CA443C66C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stride.BepuPhysics", "Stride.BepuPhysics\Stride.BepuPhysics.csproj", "{AEBFCC00-8159-46CD-A3AC-1598DB568E73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +23,10 @@ Global
 		{C6F431C2-7448-4FB2-8603-09CA443C66C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6F431C2-7448-4FB2-8603-09CA443C66C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6F431C2-7448-4FB2-8603-09CA443C66C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEBFCC00-8159-46CD-A3AC-1598DB568E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEBFCC00-8159-46CD-A3AC-1598DB568E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEBFCC00-8159-46CD-A3AC-1598DB568E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEBFCC00-8159-46CD-A3AC-1598DB568E73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

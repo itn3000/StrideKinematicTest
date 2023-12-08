@@ -9,9 +9,7 @@ Hierarchy:
         - ref!! 84301a7a-7701-4df3-a260-8f078499a431
         - ref!! be81d42f-54e3-442c-bf96-52da04b53b00
         - ref!! f235994f-0b95-4976-8d3d-3957c9b26c22
-        - ref!! 083efd5c-e0ba-4b1e-96b2-67df70c17c85
-        - ref!! 5552ccb5-45c2-427d-8fe9-f87485a09eb3
-        - ref!! 108efcfe-b86e-4155-ab62-4ecb2102add5
+        - ref!! 370a6cdd-acf7-4199-b37f-a37b94362bb3
     Parts:
         -   Entity:
                 Id: 083efd5c-e0ba-4b1e-96b2-67df70c17c85
@@ -41,30 +39,44 @@ Hierarchy:
                         Id: 659694a9-d156-4969-a70f-e3d3ddb59212
                         Model: e3a6f02a-0692-46d2-9a7b-2599214f1ef8:Cube
                         Materials: {}
-                    fee544cfc54d957a36962a8c8cd18b0c: !RigidbodyComponent
-                        Id: c62937a3-3a79-4182-8d6b-ccf3a552218f
-                        CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
-                        RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
-                        IsTrigger: false
-                        IsKinematic: true
-                        Mass: 1.0
-                        LinearDamping: 0.0
-                        AngularDamping: 0.0
-                        OverrideGravity: false
-                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
-                        NodeName: null
-                        ColliderShapes:
-                            7b2a672e2fe867cea6a4d50f6ef2bb44: !BoxColliderShapeDesc
-                                Is2D: false
-                                Size: {X: 10.0, Y: 1.0, Z: 10.0}
-                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
-                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     eb4d0df2f69c1a1b8430e39e9b27136c: !MyGame6.MoveCube,MyGame6
                         Id: 6600c9c0-41ab-457d-b1e3-4835f7374fdb
+                    bcb12781ce9695789a65a0d33969e6fc: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
+                        Id: 81b5f3ab-4e4f-4cee-a85c-9b52ce9be282
+                        Mass: 1.0
+                        Size: {X: 10.0, Y: 1.0, Z: 10.0}
+                    79804f7a10679050366da79c0a29bf2e: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
+                        Id: 71b8fec1-2c11-4b02-a567-d45560b8b70c
+                        SimulationIndex: 0
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        ColliderGroupMask: 255
+                        ContactEventHandler: null
+                        Kinematic: true
+                        SleepThreshold: 0.01
+                        MinimumTimestepCountUnderThreshold: 32
+        -   Entity:
+                Id: 370a6cdd-acf7-4199-b37f-a37b94362bb3
+                Name: Entity
+                Components:
+                    da02a8430b7818a240e8002ed332d2a6: !TransformComponent
+                        Id: 1286bbda-c933-4f5e-a398-a121bc39d72d
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            1aaf605787770a5dad94be3ef49b8ba3: ref!! 0ba0a65e-612f-4baa-9d1b-60f155c2de1e
+                            a2ca443faeb54da6e9daee884f9aa4d7: ref!! d9b8f535-fd3b-40ef-8f55-b695272d20a6
+                            641c54f66c50ad10be113f34f896b396: ref!! c9a55108-427d-4639-a633-d1f2a78d7a6c
+                    066893605a907e67fdfad68d8ad1734d: !Stride.BepuPhysics.Components.Utils.ThrowerComponent,Stride.BepuPhysics
+                        Id: 73bc6fa9-f52d-48a6-b0a5-d06ec6968eac
+                        SimulationIndex: 0
+                        SpawnPrefab: null
+                        Instancing: null
+                        SpawnPosition: ref!! 84301a7a-7701-4df3-a260-8f078499a431
+                        Speed: 20.0
         -   Entity:
                 Id: 5552ccb5-45c2-427d-8fe9-f87485a09eb3
                 Name: Sphere
@@ -79,26 +91,22 @@ Hierarchy:
                         Id: dfde37b8-9d1c-4512-9233-6aed5eab6e3b
                         Model: 4372914f-4bd4-41eb-b1c2-efc6ef2b11a0:Sphere
                         Materials: {}
-                    a6ad609b15f61132428bfa78317a72a8: !RigidbodyComponent
-                        Id: a1518d00-3571-4115-ac1d-45da0d99df3c
-                        CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
-                        RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
-                        IsTrigger: false
-                        IsKinematic: false
+                    c67e2ad28e58efc68a566723e6b604e8: !Stride.BepuPhysics.Components.Colliders.SphereColliderComponent,Stride.BepuPhysics
+                        Id: 8e4294c7-ce70-4729-88d6-11de1d1ed735
                         Mass: 1.0
-                        LinearDamping: 0.0
-                        AngularDamping: 0.0
-                        OverrideGravity: false
-                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
-                        NodeName: null
-                        ColliderShapes:
-                            a540dce7a33d5adfe0f840a5d0019e0e: !SphereColliderShapeDesc
-                                Is2D: false
-                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Radius: 0.5
+                    0c530d6dc7ecbc1aced6dea54543e429: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
+                        Id: ae1b32a7-eafb-4c1e-8f4b-cb0e88f8bec8
+                        SimulationIndex: 0
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        ColliderGroupMask: 255
+                        ContactEventHandler: null
+                        Kinematic: false
+                        SleepThreshold: 0.01
+                        MinimumTimestepCountUnderThreshold: 32
         -   Entity:
                 Id: 84301a7a-7701-4df3-a260-8f078499a431
                 Name: Camera
