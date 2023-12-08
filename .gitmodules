@@ -1,0 +1,3 @@
+[submodule "BepuPhysicIntegrationTest"]
+	path = BepuPhysicIntegrationTest
+	url = https://github.com/Nicogo1705/BepuPhysicIntegrationTest.git
