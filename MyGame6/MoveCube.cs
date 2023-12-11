@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
+using Stride.BepuPhysics.Components.Containers;
 
 namespace MyGame6
 {
@@ -21,25 +22,47 @@ namespace MyGame6
         public override void Update()
         {
             const float moveAmmount = 0.1f;
-            var position = Entity.Transform.Position;
+            var moveVector = Vector3.Zero;
             if(Input.IsKeyDown(Keys.Left))
             {
-                position.X -= moveAmmount;
+                moveVector.X -= moveAmmount;
             }
             else if(Input.IsKeyDown(Keys.Right))
             {
-                position.X += moveAmmount;
+                moveVector.X += moveAmmount;
             }
             if(Input.IsKeyDown(Keys.Up))
             {
-                position.Z -= moveAmmount;
+                moveVector.Z -= moveAmmount;
             }
             else if(Input.IsKeyDown(Keys.Down))
             {
-                position.Z += moveAmmount;
+                moveVector.Z += moveAmmount;
             }
-            Entity.Transform.Position = position;
+            if(Input.IsKeyDown(Keys.C))
+            {
+                moveVector.Y -= moveAmmount;
+            }
+            if(Input.IsKeyDown(Keys.U))
+            {
+                moveVector.Y += moveAmmount;
+            }
+
+            Entity.Transform.Position += moveVector;
             Entity.Transform.UpdateLocalFromWorld();
+            var bodycontainer = Entity.Get<BodyContainerComponent>();
+            var collider = Entity.Get<Stride.BepuPhysics.Components.Colliders.BoxColliderComponent>();
+            // kinematic rigidbody does not move without ApplyDescription?
+            var physicBody = bodycontainer.GetPhysicBody();
+            if(physicBody.HasValue)
+            {
+                var ph = physicBody.Value;
+                ph.GetDescription(out var description);
+                description.Pose.Position += new System.Numerics.Vector3(moveVector.X, moveVector.Y, moveVector.Z);
+                ph.ApplyDescription(description);
+                DebugText.Print($"{ph.Pose.Position}", new Int2(10, 40));
+            }
+            DebugText.Print($"{bodycontainer.Kinematic}, {collider.Size}, {bodycontainer.Entity.Transform.Position}", new Int2(10, 10));
         }
     }
 }

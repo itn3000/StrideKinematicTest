@@ -43,6 +43,7 @@ Hierarchy:
                         Materials: {}
                     fee544cfc54d957a36962a8c8cd18b0c: !RigidbodyComponent
                         Id: c62937a3-3a79-4182-8d6b-ccf3a552218f
+                        Enabled: false
                         CanSleep: false
                         Restitution: 0.0
                         Friction: 0.5
@@ -65,13 +66,29 @@ Hierarchy:
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     eb4d0df2f69c1a1b8430e39e9b27136c: !MyGame6.MoveCube,MyGame6
                         Id: 6600c9c0-41ab-457d-b1e3-4835f7374fdb
+                    4da4800594fb7a84903459d87d720b05: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
+                        Id: e2f29c81-4d7c-404e-8318-6ee142b4408e
+                        SimulationIndex: 0
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        ColliderGroupMask: 255
+                        ContactEventHandler: null
+                        Kinematic: true
+                        SleepThreshold: 0.01
+                        MinimumTimestepCountUnderThreshold: 32
+                    db3759435d8ed3e9bbdc9a9bd785ad4b: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
+                        Id: 41625999-6338-4f4e-a2c5-43834d58b0d2
+                        Mass: 1.0
+                        Size: {X: 10.0, Y: 1.0, Z: 10.0}
         -   Entity:
                 Id: 5552ccb5-45c2-427d-8fe9-f87485a09eb3
                 Name: Sphere
                 Components:
                     cd09f3a2271ce35bdcec2492d276a8dc: !TransformComponent
                         Id: d9b8f535-fd3b-40ef-8f55-b695272d20a6
-                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Position: {X: 0.0, Y: 3.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -81,6 +98,7 @@ Hierarchy:
                         Materials: {}
                     a6ad609b15f61132428bfa78317a72a8: !RigidbodyComponent
                         Id: a1518d00-3571-4115-ac1d-45da0d99df3c
+                        Enabled: false
                         CanSleep: false
                         Restitution: 0.0
                         Friction: 0.5
@@ -99,13 +117,29 @@ Hierarchy:
                             a540dce7a33d5adfe0f840a5d0019e0e: !SphereColliderShapeDesc
                                 Is2D: false
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                    e92ad0be383fe748ebcc2ac76c1fa0c5: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
+                        Id: f2bf98a5-1e39-422f-8830-997de35816cd
+                        SimulationIndex: 0
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 0.5
+                        MaximumRecoveryVelocity: 1000.0
+                        ColliderGroupMask: 255
+                        ContactEventHandler: null
+                        Kinematic: false
+                        SleepThreshold: 0.01
+                        MinimumTimestepCountUnderThreshold: 32
+                    d8cb7ce1629cb4c616ec840839f7f7ce: !Stride.BepuPhysics.Components.Colliders.SphereColliderComponent,Stride.BepuPhysics
+                        Id: fd8a5ab4-a22d-4b8a-a957-d3f51f89999c
+                        Mass: 1.0
+                        Radius: 0.5
         -   Entity:
                 Id: 84301a7a-7701-4df3-a260-8f078499a431
                 Name: Camera
                 Components:
                     9f88fee8886abb8174237bcdab09e278: !TransformComponent
                         Id: 6e2a6757-a69a-4896-98bb-12d18074c223
-                        Position: {X: 0.0, Y: 3.0, Z: 5.0}
+                        Position: {X: 0.0, Y: 3.0, Z: 10.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
