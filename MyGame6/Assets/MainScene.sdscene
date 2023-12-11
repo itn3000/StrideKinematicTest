@@ -27,6 +27,19 @@ Hierarchy:
                         Id: c56c9c0c-d565-410c-b95f-116aba67d056
                         Model: ed3e837a-eafe-4506-adb8-4c811f96f990:Ground
                         Materials: {}
+                    f52f97b246590dadb4352f2136497f4b: !Stride.BepuPhysics.Components.Containers.StaticContainerComponent,Stride.BepuPhysics
+                        Id: ab25a3b6-b097-4d9a-b291-821af2fa01ec
+                        SimulationIndex: 0
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        ColliderGroupMask: 255
+                        ContactEventHandler: null
+                    2d8c84b7d4e9c667ef22c9b28cbce130: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
+                        Id: d95a31bd-6147-4588-9554-28cd0ae99a0a
+                        Mass: 1.0
+                        Size: {X: 100.0, Y: 0.1, Z: 100.0}
         -   Entity:
                 Id: 108efcfe-b86e-4155-ab62-4ecb2102add5
                 Name: Cube
@@ -70,16 +83,16 @@ Hierarchy:
                         Id: e2f29c81-4d7c-404e-8318-6ee142b4408e
                         SimulationIndex: 0
                         SpringFrequency: 30.0
-                        SpringDampingRatio: 3.0
-                        FrictionCoefficient: 1.0
+                        SpringDampingRatio: 0.0001
+                        FrictionCoefficient: 50.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
                         ContactEventHandler: null
                         Kinematic: true
-                        SleepThreshold: 0.01
+                        SleepThreshold: 0.0
                         MinimumTimestepCountUnderThreshold: 32
-                    db3759435d8ed3e9bbdc9a9bd785ad4b: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
-                        Id: 41625999-6338-4f4e-a2c5-43834d58b0d2
+                    c603bdb5fc3317c231a3d6345a35fdb6: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
+                        Id: 046a5855-5af5-4127-81ca-1c099c4b628e
                         Mass: 1.0
                         Size: {X: 10.0, Y: 1.0, Z: 10.0}
         -   Entity:
@@ -120,17 +133,17 @@ Hierarchy:
                     e92ad0be383fe748ebcc2ac76c1fa0c5: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
                         Id: f2bf98a5-1e39-422f-8830-997de35816cd
                         SimulationIndex: 0
-                        SpringFrequency: 30.0
-                        SpringDampingRatio: 3.0
-                        FrictionCoefficient: 0.5
+                        SpringFrequency: 5.0
+                        SpringDampingRatio: 0.01
+                        FrictionCoefficient: 50.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
                         ContactEventHandler: null
                         Kinematic: false
-                        SleepThreshold: 0.01
+                        SleepThreshold: 0.0
                         MinimumTimestepCountUnderThreshold: 32
-                    d8cb7ce1629cb4c616ec840839f7f7ce: !Stride.BepuPhysics.Components.Colliders.SphereColliderComponent,Stride.BepuPhysics
-                        Id: fd8a5ab4-a22d-4b8a-a957-d3f51f89999c
+                    4a60cf0d3bb2f4e039c7d34c0fdbf10d: !Stride.BepuPhysics.Components.Colliders.SphereColliderComponent,Stride.BepuPhysics
+                        Id: 1809d530-2210-4eaf-9688-52cc20561747
                         Mass: 1.0
                         Radius: 0.5
         -   Entity:
