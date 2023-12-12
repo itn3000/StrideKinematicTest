@@ -1,0 +1,172 @@
+!SceneAsset
+Id: 464a6933-c309-420c-9d1e-7f682ecc24fe
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+ChildrenIds: []
+Parent: 5542ab9d-9f01-4c8b-bb8c-ad592fb5c32f:MainScene
+Offset: {X: 0.0, Y: 0.0, Z: 0.0}
+Hierarchy:
+    RootParts:
+        - ref!! 7dc2814b-2f12-4e90-b8fd-d7f69aca99fe
+        - ref!! a3308bbf-4a92-4090-b6f4-28c4b3f2f9e6
+        - ref!! 9d97604d-55ab-485d-9a49-943f05c50bc0
+        - ref!! 3fcdbe90-09d3-4064-91b0-1b1de54115cc
+        - ref!! e3a94c70-34a4-4f6f-86aa-44082b736f9f
+        - ref!! a8cdf611-420e-4070-9159-a75d0c0e3967
+    Parts:
+        -   Entity:
+                Id: 3fcdbe90-09d3-4064-91b0-1b1de54115cc
+                Name: Ground
+                Components:
+                    1e7ec636d4871dd9a38c55db576e81a8: !TransformComponent
+                        Id: bbf4b3df-7126-4d2a-8743-8aae3b9219aa
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    ea68ef0601d9c087089393e986bacc74: !ModelComponent
+                        Id: fd0b4e18-d3ef-47d4-a19d-0a5bf84c7f03
+                        Model: ed3e837a-eafe-4506-adb8-4c811f96f990:Ground
+                        Materials: {}
+                    f52f97b246590dadb4352f2136497f4b: !Stride.BepuPhysics.Components.Containers.StaticContainerComponent,Stride.BepuPhysics
+                        Id: a287a998-9232-4da4-99ba-d2d9c8ac93f8
+                        SimulationIndex: 0
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        ColliderGroupMask: 255
+                        ContactEventHandler: null
+                    2d8c84b7d4e9c667ef22c9b28cbce130: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
+                        Id: ecb5506a-db64-4e11-b31f-184b6c5e0d60
+                        Mass: 1.0
+                        Size: {X: 100.0, Y: 0.1, Z: 100.0}
+        -   Entity:
+                Id: 7dc2814b-2f12-4e90-b8fd-d7f69aca99fe
+                Name: Camera
+                Components:
+                    9f88fee8886abb8174237bcdab09e278: !TransformComponent
+                        Id: 3da750fe-b54e-4cd3-9446-0159beb66c3f
+                        Position: {X: 0.0, Y: 3.0, Z: 10.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    1459193c6996d8b5f8d158417cba3f2a: !CameraComponent
+                        Id: 30853d33-99fa-47c7-921d-6a4a5df4a0c9
+                        Name: null
+                        Projection: Perspective
+                        Slot: bdbd31fd-7e40-4f1b-8501-f6319e40a1b6
+        -   Entity:
+                Id: 9d97604d-55ab-485d-9a49-943f05c50bc0
+                Name: Skybox
+                Components:
+                    af42c9e828c392fe3031dfb5b5c72024: !TransformComponent
+                        Id: 3c4b82b9-0584-4ef6-a098-6a29bb8b2a60
+                        Position: {X: 0.0, Y: 2.0, Z: -2.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    5682fe156c9ce43dfae52be51569da44: !BackgroundComponent
+                        Id: f4023aed-5c05-4502-a8f1-9cad60cdf87f
+                        Texture: e7afc06b-62e2-442e-bfa3-4a5e747808c6:Skybox texture
+                    22c022b004643c0dbdaf377463c17a1e: !LightComponent
+                        Id: e4dbbc52-892e-4dd0-841e-28edb44e59ac
+                        Type: !LightSkybox
+                            Skybox: 68626e35-b71e-4a20-94a6-63c13e2a2bc6:Skybox
+        -   Entity:
+                Id: a3308bbf-4a92-4090-b6f4-28c4b3f2f9e6
+                Name: Directional light
+                Components:
+                    c20208b42937350a06abd062bf95b0c8: !TransformComponent
+                        Id: 052ef96d-6c1e-4faa-929b-764efc12674d
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6eefce233d130290dd48d9ce6efcd750: !LightComponent
+                        Id: 86aee928-57c7-45a4-b02f-cd8d5acf622e
+                        Type: !LightDirectional
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Shadow: !LightDirectionalShadowMap
+                                Enabled: true
+                                Filter: !LightShadowMapFilterTypePcf
+                                    FilterSize: Filter5x5
+                                Size: Large
+                                DepthRange: {}
+                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
+                                ComputeTransmittance: false
+                                BiasParameters: {}
+                        Intensity: 20.0
+        -   Entity:
+                Id: a8cdf611-420e-4070-9159-a75d0c0e3967
+                Name: Cube
+                Components:
+                    28c471b137d3560e1c44430cec915b36: !TransformComponent
+                        Id: a0fc08c0-bb99-4fcd-9867-5025670be8e8
+                        Position: {X: 0.0, Y: 1.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    d26ba07c84d04af35e763c26a19a7ecc: !ModelComponent
+                        Id: 1b0628a0-8197-411e-ab09-96526bae86bb
+                        Model: e3a6f02a-0692-46d2-9a7b-2599214f1ef8:Cube
+                        Materials: {}
+                    fee544cfc54d957a36962a8c8cd18b0c: !RigidbodyComponent
+                        Id: 9740e549-b310-40ea-9f95-206a8538a7a2
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: true
+                        Mass: 1.0
+                        LinearDamping: 5.0
+                        AngularDamping: 0.0
+                        OverrideGravity: false
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            7b2a672e2fe867cea6a4d50f6ef2bb44: !BoxColliderShapeDesc
+                                Is2D: false
+                                Size: {X: 10.0, Y: 1.0, Z: 10.0}
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    eb4d0df2f69c1a1b8430e39e9b27136c: !MyGame6.MoveCube,MyGame6
+                        Id: 3b0f367b-430f-4140-b95d-7e6123547577
+        -   Entity:
+                Id: e3a94c70-34a4-4f6f-86aa-44082b736f9f
+                Name: Sphere
+                Components:
+                    cd09f3a2271ce35bdcec2492d276a8dc: !TransformComponent
+                        Id: 0526e705-0f58-410d-9568-477a116ea407
+                        Position: {X: 0.0, Y: 3.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    722960cdafffae7f09790f221bca42e1: !ModelComponent
+                        Id: 269c9462-b2dd-4356-be01-0594afa5f119
+                        Model: 4372914f-4bd4-41eb-b1c2-efc6ef2b11a0:Sphere
+                        Materials: {}
+                    a6ad609b15f61132428bfa78317a72a8: !RigidbodyComponent
+                        Id: 7ef78cc1-523d-4b9b-9215-413dc033f7ac
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: false
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: false
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            a540dce7a33d5adfe0f840a5d0019e0e: !SphereColliderShapeDesc
+                                Is2D: false
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}

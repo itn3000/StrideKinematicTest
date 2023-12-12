@@ -2,7 +2,7 @@
 Id: 44653bc0-6fea-4bd0-8257-054cff8600c8
 SerializedVersion: {Stride: 3.1.0.1}
 Tags: []
-DefaultScene: 5542ab9d-9f01-4c8b-bb8c-ad592fb5c32f:MainScene
+DefaultScene: e6f1a2e4-a7b0-4fc7-b6e8-6a472cfa5ac3:BepuScene
 GraphicsCompositor: d50ce5e0-3c86-4147-9a0e-efd510491e0a:GraphicsCompositor
 Defaults:
     - !Stride.Audio.AudioEngineSettings,Stride.Audio

@@ -22,7 +22,9 @@ namespace MyGame6
         public override void Update()
         {
             const float moveAmmount = 0.1f;
+            const float rotateAmount = 10f;
             var moveVector = Vector3.Zero;
+            var rotation = Entity.Transform.Rotation;
             if(Input.IsKeyDown(Keys.Left))
             {
                 moveVector.X -= moveAmmount;
@@ -47,8 +49,16 @@ namespace MyGame6
             {
                 moveVector.Y += moveAmmount;
             }
-
+            if(Input.IsKeyDown(Keys.Q))
+            {
+                rotation *= Quaternion.RotationZ(rotateAmount);
+            }
+            if(Input.IsKeyDown(Keys.E))
+            {
+                rotation *= Quaternion.RotationZ(-rotateAmount);
+            }
             Entity.Transform.Position += moveVector;
+            Entity.Transform.Rotation = rotation;
             Entity.Transform.UpdateLocalFromWorld();
             var bodycontainer = Entity.Get<BodyContainerComponent>();
             var collider = Entity.Get<Stride.BepuPhysics.Components.Colliders.BoxColliderComponent>();
