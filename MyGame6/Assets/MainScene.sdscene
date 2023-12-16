@@ -9,6 +9,7 @@ Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
         - ref!! 9ecd5f38-9dc7-4ad6-b25e-fc76ef15e31f
+        - ref!! a60f878f-2810-4b66-9cdf-eee5398be282
     Parts:
         -   Entity:
                 Id: 9ecd5f38-9dc7-4ad6-b25e-fc76ef15e31f
@@ -22,3 +23,17 @@ Hierarchy:
                         Children: {}
                     4d414fcdf1526ad21f77bb6537a61ca4: !MyGame6.ChangeScene,MyGame6
                         Id: dbfc12a6-a529-43f5-88ae-a6c455dc3d59
+        -   Entity:
+                Id: a60f878f-2810-4b66-9cdf-eee5398be282
+                Name: Capsule
+                Components:
+                    661131534c06de0edaf2f63b463a56d4: !TransformComponent
+                        Id: bc101332-3969-4d3c-82c2-5f474e53ff41
+                        Position: {X: 2.0, Y: 3.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    18a4b81227ca053b644595db70ad5d2a: !ModelComponent
+                        Id: 49ab5257-768e-4dff-abc2-5ccc0e8b249d
+                        Model: 9a77c0d1-d354-4370-89e0-a9a0cedd79e9:Capsule
+                        Materials: {}

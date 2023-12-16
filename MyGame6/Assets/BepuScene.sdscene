@@ -56,9 +56,9 @@ Hierarchy:
                     4da4800594fb7a84903459d87d720b05: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
                         Id: 0ca2a69f-09a6-4519-aece-15d8e44e2e38
                         SimulationIndex: 0
-                        SpringFrequency: 30.0
+                        SpringFrequency: 50.0
                         SpringDampingRatio: 0.0001
-                        FrictionCoefficient: 50.0
+                        FrictionCoefficient: 100.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
                         ContactEventHandler: null
