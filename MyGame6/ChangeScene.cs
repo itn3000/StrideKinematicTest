@@ -7,6 +7,7 @@ using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
 using Stride.Core;
+using Stride.Physics;
 
 namespace MyGame6
 {
@@ -25,7 +26,7 @@ namespace MyGame6
             OriginalBodyScene = Content.Load<Scene>("OriginalBodyScene");
             SceneSystem.SceneInstance.RootScene.Children.Add(BepuScene);
             CurrentScene = BepuScene;
-            (originalCubePosition, originalSpherePosition) = GetPosition(CurrentScene);
+            (originalSpherePosition, originalCubePosition) = GetPosition(CurrentScene);
         }
 
         public override void Update()
@@ -66,15 +67,39 @@ namespace MyGame6
         {
             foreach(var entity in scene.Entities)
             {
-                if(entity.Name == "Sphere")
+                if(entity.Name.StartsWith("Sphere"))
                 {
                     entity.Transform.Position = originalSpherePosition;
+                    //if(entity.Name.EndsWith("Bepu"))
+                    //{
+                    //    var container = entity.Get<Stride.BepuPhysics.Components.Containers.BodyContainerComponent>();
+                    //    //container.Position = originalSpherePosition;
+                    //}
+                    //if (entity.Name.EndsWith("Original"))
+                    //{
+                    //    var rigid = entity.Get<RigidbodyComponent>();
+                    //    rigid.UpdatePhysicsTransformation();
+                    //}
+                    entity.Transform.UpdateWorldMatrix();
+
                 }
-                else if(entity.Name == "Cube")
+                else if(entity.Name.StartsWith("Cube"))
                 {
                     entity.Transform.Position = originalCubePosition;
+                    //if (entity.Name.EndsWith("Bepu"))
+                    //{
+                    //    var container = entity.Get<Stride.BepuPhysics.Components.Containers.BodyContainerComponent>();
+                    //    //container.Position = originalCubePosition;
+                    //}
+                    //if (entity.Name.EndsWith("Original"))
+                    //{
+                    //    var rigid = entity.Get<RigidbodyComponent>();
+                    //    rigid.UpdatePhysicsTransformation();
+                    //}
+                    entity.Transform.UpdateWorldMatrix();
                 }
             }
+
         }
     }
 }

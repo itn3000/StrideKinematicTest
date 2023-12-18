@@ -22,7 +22,7 @@ namespace MyGame6
         public override void Update()
         {
             const float moveAmmount = 0.1f;
-            const float rotateAmount = 10f;
+            const float rotateAmount = 0.01f;
             var moveVector = Vector3.Zero;
             var rotation = Entity.Transform.Rotation;
             if(Input.IsKeyDown(Keys.Left))
@@ -59,7 +59,7 @@ namespace MyGame6
             }
             Entity.Transform.Position += moveVector;
             Entity.Transform.Rotation = rotation;
-            Entity.Transform.UpdateLocalFromWorld();
+            Entity.Transform.UpdateWorldMatrix();
             var bodycontainer = Entity.Get<BodyContainerComponent>();
             var collider = Entity.Get<Stride.BepuPhysics.Components.Colliders.BoxColliderComponent>();
             // kinematic rigidbody does not move without ApplyDescription?
@@ -69,6 +69,7 @@ namespace MyGame6
                 var ph = physicBody.Value;
                 ph.GetDescription(out var description);
                 description.Pose.Position += new System.Numerics.Vector3(moveVector.X, moveVector.Y, moveVector.Z);
+                description.Pose.Orientation = new System.Numerics.Quaternion(rotation.X, rotation.Y, rotation.Z, rotation.W);
                 ph.ApplyDescription(description);
                 DebugText.Print($"{ph.Pose.Position}", new Int2(10, 40));
             }

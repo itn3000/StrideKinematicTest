@@ -7,16 +7,13 @@ Parent: 5542ab9d-9f01-4c8b-bb8c-ad592fb5c32f:MainScene
 Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
-        - ref!! e790b98e-fc9d-4df8-b4cb-2f2fe257cec2
-        - ref!! e3762fb6-47c0-4f62-b8b5-a8a399382638
-        - ref!! 689b8162-812d-4e36-bf07-6a5dc295bd5f
         - ref!! 4bda927a-4c1f-43fd-bb28-093df877e370
         - ref!! bdbcf01a-865a-48c5-b2df-e961380c524e
         - ref!! 3af67246-5940-4afe-bd38-40c0e3da99a3
     Parts:
         -   Entity:
                 Id: 3af67246-5940-4afe-bd38-40c0e3da99a3
-                Name: Cube
+                Name: CubeBepu
                 Components:
                     28c471b137d3560e1c44430cec915b36: !TransformComponent
                         Id: 37c4bee3-dca3-42a3-8187-d3cf59077c7d
@@ -61,7 +58,7 @@ Hierarchy:
                         FrictionCoefficient: 100.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
-                        ContactEventHandler: null
+                        IgnoreGravity: false
                         Kinematic: true
                         SleepThreshold: 0.0
                         MinimumTimestepCountUnderThreshold: 32
@@ -91,31 +88,14 @@ Hierarchy:
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
-                        ContactEventHandler: null
+                        IgnoreGravity: false
                     2d8c84b7d4e9c667ef22c9b28cbce130: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
                         Id: 4498e46b-0b26-40bd-957d-814f79cf062e
                         Mass: 1.0
                         Size: {X: 100.0, Y: 0.1, Z: 100.0}
         -   Entity:
-                Id: 689b8162-812d-4e36-bf07-6a5dc295bd5f
-                Name: Skybox
-                Components:
-                    af42c9e828c392fe3031dfb5b5c72024: !TransformComponent
-                        Id: 830e95f7-4ec3-46c2-be72-a5f6bb48b174
-                        Position: {X: 0.0, Y: 2.0, Z: -2.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    5682fe156c9ce43dfae52be51569da44: !BackgroundComponent
-                        Id: 097205ae-9688-4972-80d7-275fb989c932
-                        Texture: e7afc06b-62e2-442e-bfa3-4a5e747808c6:Skybox texture
-                    22c022b004643c0dbdaf377463c17a1e: !LightComponent
-                        Id: 8403a9a6-1738-4d6e-8d0d-64fe410a4e87
-                        Type: !LightSkybox
-                            Skybox: 68626e35-b71e-4a20-94a6-63c13e2a2bc6:Skybox
-        -   Entity:
                 Id: bdbcf01a-865a-48c5-b2df-e961380c524e
-                Name: Sphere
+                Name: SphereBepu
                 Components:
                     cd09f3a2271ce35bdcec2492d276a8dc: !TransformComponent
                         Id: f856c8b5-b74d-4dac-90ae-6e7f338aaca4
@@ -156,7 +136,7 @@ Hierarchy:
                         FrictionCoefficient: 50.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
-                        ContactEventHandler: null
+                        IgnoreGravity: false
                         Kinematic: false
                         SleepThreshold: 0.0
                         MinimumTimestepCountUnderThreshold: 32
@@ -164,43 +144,3 @@ Hierarchy:
                         Id: 21330196-5470-4c50-808f-f602a6ae454d
                         Mass: 1.0
                         Radius: 0.5
-        -   Entity:
-                Id: e3762fb6-47c0-4f62-b8b5-a8a399382638
-                Name: Directional light
-                Components:
-                    c20208b42937350a06abd062bf95b0c8: !TransformComponent
-                        Id: a9b0e1f3-60b9-43e2-ac1c-3e0b9f104765
-                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
-                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    6eefce233d130290dd48d9ce6efcd750: !LightComponent
-                        Id: ac3e0390-f33d-4253-a343-eeda8908292a
-                        Type: !LightDirectional
-                            Color: !ColorRgbProvider
-                                Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Shadow: !LightDirectionalShadowMap
-                                Enabled: true
-                                Filter: !LightShadowMapFilterTypePcf
-                                    FilterSize: Filter5x5
-                                Size: Large
-                                DepthRange: {}
-                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
-                                ComputeTransmittance: false
-                                BiasParameters: {}
-                        Intensity: 20.0
-        -   Entity:
-                Id: e790b98e-fc9d-4df8-b4cb-2f2fe257cec2
-                Name: Camera
-                Components:
-                    9f88fee8886abb8174237bcdab09e278: !TransformComponent
-                        Id: 413d7977-e94d-483f-b354-61740758c2e8
-                        Position: {X: 0.0, Y: 3.0, Z: 10.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    1459193c6996d8b5f8d158417cba3f2a: !CameraComponent
-                        Id: c67f0a8a-18c6-4771-9bde-80afaca742d1
-                        Name: null
-                        Projection: Perspective
-                        Slot: bdbd31fd-7e40-4f1b-8501-f6319e40a1b6

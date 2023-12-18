@@ -8,9 +8,44 @@ ChildrenIds:
 Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
+        - ref!! 6cc649fd-f470-4be2-8ef8-156ff6aa8894
+        - ref!! 7bbab17e-3c39-4b6d-9151-f5ef25b2af52
+        - ref!! face9412-95a8-4770-82d9-a2436d0efa0b
         - ref!! 9ecd5f38-9dc7-4ad6-b25e-fc76ef15e31f
         - ref!! a60f878f-2810-4b66-9cdf-eee5398be282
     Parts:
+        -   Entity:
+                Id: 6cc649fd-f470-4be2-8ef8-156ff6aa8894
+                Name: Camera
+                Components:
+                    9f88fee8886abb8174237bcdab09e278: !TransformComponent
+                        Id: 3b91f0c0-a063-44df-9f5d-d167e37d71d1
+                        Position: {X: 0.0, Y: 3.0, Z: 10.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    1459193c6996d8b5f8d158417cba3f2a: !CameraComponent
+                        Id: 3d8504a1-5d4c-4548-b56e-bb7b56812061
+                        Name: null
+                        Projection: Perspective
+                        Slot: bdbd31fd-7e40-4f1b-8501-f6319e40a1b6
+        -   Entity:
+                Id: 7bbab17e-3c39-4b6d-9151-f5ef25b2af52
+                Name: Skybox
+                Components:
+                    af42c9e828c392fe3031dfb5b5c72024: !TransformComponent
+                        Id: 8e76657f-3bb3-4e08-8637-c070334ad615
+                        Position: {X: 0.0, Y: 2.0, Z: -2.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    5682fe156c9ce43dfae52be51569da44: !BackgroundComponent
+                        Id: 134ede8b-4d59-423e-85dc-11f7eddeeaaf
+                        Texture: e7afc06b-62e2-442e-bfa3-4a5e747808c6:Skybox texture
+                    22c022b004643c0dbdaf377463c17a1e: !LightComponent
+                        Id: c60bdbe6-d19f-405d-96e4-931710ed8413
+                        Type: !LightSkybox
+                            Skybox: 68626e35-b71e-4a20-94a6-63c13e2a2bc6:Skybox
         -   Entity:
                 Id: 9ecd5f38-9dc7-4ad6-b25e-fc76ef15e31f
                 Name: ChangeScene
@@ -37,3 +72,28 @@ Hierarchy:
                         Id: 49ab5257-768e-4dff-abc2-5ccc0e8b249d
                         Model: 9a77c0d1-d354-4370-89e0-a9a0cedd79e9:Capsule
                         Materials: {}
+        -   Entity:
+                Id: face9412-95a8-4770-82d9-a2436d0efa0b
+                Name: Directional light
+                Components:
+                    c20208b42937350a06abd062bf95b0c8: !TransformComponent
+                        Id: b67134ff-2bfc-4031-89f0-c7b8a9f32be0
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6eefce233d130290dd48d9ce6efcd750: !LightComponent
+                        Id: df0241bb-1194-4041-8e8d-090efc47f306
+                        Type: !LightDirectional
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Shadow: !LightDirectionalShadowMap
+                                Enabled: true
+                                Filter: !LightShadowMapFilterTypePcf
+                                    FilterSize: Filter5x5
+                                Size: Large
+                                DepthRange: {}
+                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
+                                ComputeTransmittance: false
+                                BiasParameters: {}
+                        Intensity: 20.0

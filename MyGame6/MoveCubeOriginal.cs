@@ -22,7 +22,7 @@ namespace MyGame6
         public override void Update()
         {
             const float moveAmmount = 0.1f;
-            const float rotateAmount = 10f;
+            const float rotateAmount = 0.1f;
             var moveVector = Vector3.Zero;
             var rotation = Entity.Transform.Rotation;
             if(Input.IsKeyDown(Keys.Left))
