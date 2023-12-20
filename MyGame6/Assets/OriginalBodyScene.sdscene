@@ -7,6 +7,7 @@ Parent: 5542ab9d-9f01-4c8b-bb8c-ad592fb5c32f:MainScene
 Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
+        - ref!! 7dc2814b-2f12-4e90-b8fd-d7f69aca99fe
         - ref!! 3fcdbe90-09d3-4064-91b0-1b1de54115cc
         - ref!! e3a94c70-34a4-4f6f-86aa-44082b736f9f
         - ref!! a8cdf611-420e-4070-9159-a75d0c0e3967
@@ -33,11 +34,26 @@ Hierarchy:
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
-                        IgnoreGravity: false
+                        ContactEventHandler: null
                     2d8c84b7d4e9c667ef22c9b28cbce130: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
                         Id: ecb5506a-db64-4e11-b31f-184b6c5e0d60
                         Mass: 1.0
                         Size: {X: 100.0, Y: 0.1, Z: 100.0}
+        -   Entity:
+                Id: 7dc2814b-2f12-4e90-b8fd-d7f69aca99fe
+                Name: Camera
+                Components:
+                    9f88fee8886abb8174237bcdab09e278: !TransformComponent
+                        Id: 3da750fe-b54e-4cd3-9446-0159beb66c3f
+                        Position: {X: 0.0, Y: 3.0, Z: 10.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    1459193c6996d8b5f8d158417cba3f2a: !CameraComponent
+                        Id: 30853d33-99fa-47c7-921d-6a4a5df4a0c9
+                        Name: null
+                        Projection: Perspective
+                        Slot: bdbd31fd-7e40-4f1b-8501-f6319e40a1b6
         -   Entity:
                 Id: a8cdf611-420e-4070-9159-a75d0c0e3967
                 Name: CubeOriginal
@@ -133,3 +149,7 @@ Hierarchy:
                             a540dce7a33d5adfe0f840a5d0019e0e: !SphereColliderShapeDesc
                                 Is2D: false
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                    13bf7f3fe409c57d1788597cdfffa8dd: !MyGame6.DisplayPosition,MyGame6
+                        Id: 3595094f-5fa3-4e37-9529-841726efba93
+                        PositionY: 60
+                        PositionX: 10
