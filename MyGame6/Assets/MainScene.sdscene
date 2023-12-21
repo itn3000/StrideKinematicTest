@@ -2,9 +2,7 @@
 Id: 5542ab9d-9f01-4c8b-bb8c-ad592fb5c32f
 SerializedVersion: {Stride: 3.1.0.1}
 Tags: []
-ChildrenIds:
-    - 464a6933-c309-420c-9d1e-7f682ecc24fe
-    - e6f1a2e4-a7b0-4fc7-b6e8-6a472cfa5ac3
+ChildrenIds: []
 Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
@@ -50,6 +48,8 @@ Hierarchy:
                         Children: {}
                     4d414fcdf1526ad21f77bb6537a61ca4: !MyGame6.ChangeScene,MyGame6
                         Id: dbfc12a6-a529-43f5-88ae-a6c455dc3d59
+                        BepuSceneRef: e6f1a2e4-a7b0-4fc7-b6e8-6a472cfa5ac3:BepuScene
+                        OriginalSceneRef: 464a6933-c309-420c-9d1e-7f682ecc24fe:OriginalBodyScene
         -   Entity:
                 Id: a60f878f-2810-4b66-9cdf-eee5398be282
                 Name: Capsule

@@ -13,7 +13,6 @@ namespace MyGame6
     public class MoveCube : SyncScript
     {
         // Declared public member fields and properties will show in the game studio
-
         public override void Start()
         {
             // Initialization of the script.
@@ -59,9 +58,10 @@ namespace MyGame6
             }
             Entity.Transform.Position += moveVector;
             Entity.Transform.Rotation = rotation;
-            Entity.Transform.UpdateWorldMatrix();
             var bodycontainer = Entity.Get<BodyContainerComponent>();
             var collider = Entity.Get<Stride.BepuPhysics.Components.Colliders.BoxColliderComponent>();
+            //bodycontainer.Position = Entity.Transform.Position;
+            //bodycontainer.Orientation = Entity.Transform.Rotation;
             // kinematic rigidbody does not move without ApplyDescription?
             var physicBody = bodycontainer.GetPhysicBody();
             if(physicBody.HasValue)
@@ -73,6 +73,7 @@ namespace MyGame6
                 ph.ApplyDescription(description);
                 DebugText.Print($"{ph.Pose.Position}", new Int2(10, 40));
             }
+            Entity.Transform.UpdateWorldMatrix();
             DebugText.Print($"{bodycontainer.Kinematic}, {collider.Size}, {bodycontainer.Entity.Transform.Position}", new Int2(10, 10));
         }
     }

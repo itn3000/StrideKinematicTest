@@ -3,7 +3,6 @@ Id: e6f1a2e4-a7b0-4fc7-b6e8-6a472cfa5ac3
 SerializedVersion: {Stride: 3.1.0.1}
 Tags: []
 ChildrenIds: []
-Parent: 5542ab9d-9f01-4c8b-bb8c-ad592fb5c32f:MainScene
 Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
@@ -31,12 +30,16 @@ Hierarchy:
                     4da4800594fb7a84903459d87d720b05: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
                         Id: 0ca2a69f-09a6-4519-aece-15d8e44e2e38
                         SimulationIndex: 0
-                        SpringFrequency: 0.0
-                        SpringDampingRatio: 1.0
+                        SpringFrequency: 100.0
+                        SpringDampingRatio: 0.001
                         FrictionCoefficient: 100.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
-                        ContactEventHandler: null
+                        ColliderFilterByDistanceId: 0
+                        ColliderFilterByDistanceX: 0
+                        ColliderFilterByDistanceY: 0
+                        ColliderFilterByDistanceZ: 0
+                        IgnoreGlobalGravity: false
                         Kinematic: true
                         SleepThreshold: 0.0
                         MinimumTimestepCountUnderThreshold: 32
@@ -66,7 +69,11 @@ Hierarchy:
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
-                        ContactEventHandler: null
+                        ColliderFilterByDistanceId: 0
+                        ColliderFilterByDistanceX: 0
+                        ColliderFilterByDistanceY: 0
+                        ColliderFilterByDistanceZ: 0
+                        IgnoreGlobalGravity: false
                     2d8c84b7d4e9c667ef22c9b28cbce130: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
                         Id: 4498e46b-0b26-40bd-957d-814f79cf062e
                         Mass: 1.0
@@ -92,15 +99,23 @@ Hierarchy:
                     a8b5694084ae2a84589c06bfcd96b981: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
                         Id: 5140623f-de26-4ce7-8d88-8f8c2fa2699b
                         SimulationIndex: 0
-                        SpringFrequency: 30.0
-                        SpringDampingRatio: 3.0
+                        SpringFrequency: 100.0
+                        SpringDampingRatio: 0.001
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
-                        ContactEventHandler: null
+                        ColliderFilterByDistanceId: 0
+                        ColliderFilterByDistanceX: 0
+                        ColliderFilterByDistanceY: 0
+                        ColliderFilterByDistanceZ: 0
+                        IgnoreGlobalGravity: false
                         Kinematic: false
                         SleepThreshold: 0.01
                         MinimumTimestepCountUnderThreshold: 32
+                    f8394ca0c11fe8436c1caa8597439351: !Stride.BepuPhysics.Components.Colliders.SphereColliderComponent,Stride.BepuPhysics
+                        Id: 9b4a632d-e213-430e-9623-1e8c31d82b28
+                        Mass: 1.0
+                        Radius: 0.5
         -   Entity:
                 Id: e790b98e-fc9d-4df8-b4cb-2f2fe257cec2
                 Name: Camera

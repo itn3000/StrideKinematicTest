@@ -9,12 +9,16 @@ using Stride.Engine;
 using Stride.Core;
 using Stride.Physics;
 using Stride.BepuPhysics.Extensions;
+using Stride.Core.Serialization;
+using Stride.Core.DataSerializers;
 
 namespace MyGame6
 {
     public class ChangeScene : SyncScript
     {
         // Declared public member fields and properties will show in the game studio
+        public UrlReference<Scene> BepuSceneRef;
+        public UrlReference<Scene> OriginalSceneRef;
         Scene CurrentScene;
         Scene BepuScene;
         Scene OriginalBodyScene;
@@ -23,35 +27,40 @@ namespace MyGame6
         public override void Start()
         {
             // Initialization of the script.
-            BepuScene = Content.Load<Scene>("BepuScene");
-            OriginalBodyScene = Content.Load<Scene>("OriginalBodyScene");
-            foreach(var scene in SceneSystem.SceneInstance.RootScene.Children)
-            {
-                SceneSystem.SceneInstance.RootScene.Children.Remove(scene);
-            }
+            BepuScene = Content.Load<Scene>(BepuSceneRef);
+            SceneSystem.SceneInstance.RootScene.Children.Clear();
             SceneSystem.SceneInstance.RootScene.Children.Add(BepuScene);
             CurrentScene = BepuScene;
             (originalSpherePosition, originalCubePosition) = GetPosition(CurrentScene);
         }
 
-        Scene LoadBepuScene() => Content.Load<Scene>("BepuScene");
-        Scene LoadOriginalScene() => Content.Load<Scene>("OriginalBodyScene");
+        void SetScene()
+        {
+
+        }
+
+        Scene LoadBepuScene() => Content.Load(BepuSceneRef);
+        Scene LoadOriginalScene() => Content.Load(OriginalSceneRef);
 
         public override void Update()
         {
-            if(Input.IsKeyPressed(Keys.D1) && CurrentScene != BepuScene)
+            if(Input.IsKeyPressed(Keys.D1) && !CurrentScene.Name.Equals("BepuScene", StringComparison.OrdinalIgnoreCase))
             {
-                var old = BepuScene;
+                SceneSystem.SceneInstance.RootScene.Children.Clear();
+                Content.Unload(CurrentScene);
+                CurrentScene.Dispose();
                 var loaded = LoadBepuScene();
-                SceneSystem.SceneInstance.RootScene.Children.Remove(CurrentScene);
                 SceneSystem.SceneInstance.RootScene.Children.Add(loaded);
                 BepuScene = loaded;
                 CurrentScene = BepuScene;
-                //ResetPosition(CurrentScene);
+                ResetPosition(CurrentScene);
             }
-            else if(Input.IsKeyPressed(Keys.D2) && CurrentScene != OriginalBodyScene)
+            else if(Input.IsKeyPressed(Keys.D2) && !CurrentScene.Name.Equals("OriginalBodyScene", StringComparison.OrdinalIgnoreCase))
             {
-                SceneSystem.SceneInstance.RootScene.Children.Remove(CurrentScene);
+                SceneSystem.SceneInstance.RootScene.Children.Clear();
+                Content.Unload(CurrentScene);
+                CurrentScene?.Dispose();
+                OriginalBodyScene = Content.Load(OriginalSceneRef);
                 SceneSystem.SceneInstance.RootScene.Children.Add(OriginalBodyScene);
                 CurrentScene = OriginalBodyScene;
                 ResetPosition(CurrentScene);
