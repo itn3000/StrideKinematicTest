@@ -15,7 +15,12 @@ namespace MyGame6
         // Declared public member fields and properties will show in the game studio
         public override void Start()
         {
-            // Initialization of the script.
+            foreach (var sys in Game.GameSystems)
+            {
+                Log.Info($"sysname: {sys.Name}");
+            }
+            var bodycontainer = Entity.Get<BodyContainerComponent>();
+            Log.Info($"{bodycontainer.SimulationIndex}, {bodycontainer.Simulation.Enabled}, {bodycontainer.Simulation.PoseGravity}");
         }
 
         public override void Update()
@@ -60,6 +65,7 @@ namespace MyGame6
             Entity.Transform.Rotation = rotation;
             var bodycontainer = Entity.Get<BodyContainerComponent>();
             var collider = Entity.Get<Stride.BepuPhysics.Components.Colliders.BoxColliderComponent>();
+            
             //bodycontainer.Position = Entity.Transform.Position;
             //bodycontainer.Orientation = Entity.Transform.Rotation;
             // kinematic rigidbody does not move without ApplyDescription?

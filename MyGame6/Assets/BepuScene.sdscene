@@ -10,7 +10,26 @@ Hierarchy:
         - ref!! 4bda927a-4c1f-43fd-bb28-093df877e370
         - ref!! bdbcf01a-865a-48c5-b2df-e961380c524e
         - ref!! 3af67246-5940-4afe-bd38-40c0e3da99a3
+        - ref!! 8244f640-5b90-48a3-b605-a63301c40469
+        - ref!! 1b809e5d-1e73-4d8f-8861-fd41718686ad
     Parts:
+        -   Entity:
+                Id: 1b809e5d-1e73-4d8f-8861-fd41718686ad
+                Name: SpringMenu
+                Components:
+                    30b08afc21d41119593f14cacce14fb5: !TransformComponent
+                        Id: 3e5a941c-caf9-448b-b23a-41eff57c9cce
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c7dc7278391723d94d1a62cab955d3f9: !UIComponent
+                        Id: 8107237c-f2f5-427a-9954-11d03a633493
+                        Page: cdddb0b1-5d0f-4f5f-80d0-313e193b3074:Page
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
+                    80dc86d7d5284df75587d30b892ad92d: !MyGame6.SpringValueChanged,MyGame6
+                        Id: 68603ac9-d8cf-4471-9d11-8f906c2a14f2
         -   Entity:
                 Id: 3af67246-5940-4afe-bd38-40c0e3da99a3
                 Name: CubeBepu
@@ -30,8 +49,8 @@ Hierarchy:
                     4da4800594fb7a84903459d87d720b05: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
                         Id: 0ca2a69f-09a6-4519-aece-15d8e44e2e38
                         SimulationIndex: 0
-                        SpringFrequency: 100.0
-                        SpringDampingRatio: 0.001
+                        SpringFrequency: 50.0
+                        SpringDampingRatio: 0.0
                         FrictionCoefficient: 100.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
@@ -79,6 +98,46 @@ Hierarchy:
                         Mass: 1.0
                         Size: {X: 100.0, Y: 0.1, Z: 100.0}
         -   Entity:
+                Id: 8244f640-5b90-48a3-b605-a63301c40469
+                Name: SphereBepu2
+                Components:
+                    cd09f3a2271ce35bdcec2492d276a8dc: !TransformComponent
+                        Id: 6be3bd49-1f69-4f1e-9a3c-0ea96c858626
+                        Position: {X: 2.0, Y: 3.0, Z: 2.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    722960cdafffae7f09790f221bca42e1: !ModelComponent
+                        Id: 2e886f92-0097-4ff9-88d1-3e17f52ecc02
+                        Model: 4372914f-4bd4-41eb-b1c2-efc6ef2b11a0:Sphere
+                        Materials: {}
+                    d58b5b84e5651cfcf3674f00c1e5ea75: !MyGame6.DisplayPosition,MyGame6
+                        Id: 248ecb46-7fe1-4366-93bb-55e953b3194d
+                        PositionY: 80
+                        PositionX: 10
+                    a8b5694084ae2a84589c06bfcd96b981: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
+                        Id: 59f9cb4d-8f15-48d0-b387-229d54fd6e79
+                        SimulationIndex: 1
+                        SpringFrequency: 5.0
+                        SpringDampingRatio: 0.5
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        ColliderGroupMask: 255
+                        ColliderFilterByDistanceId: 0
+                        ColliderFilterByDistanceX: 0
+                        ColliderFilterByDistanceY: 0
+                        ColliderFilterByDistanceZ: 0
+                        IgnoreGlobalGravity: false
+                        Kinematic: false
+                        SleepThreshold: 0.01
+                        MinimumTimestepCountUnderThreshold: 32
+                    f8394ca0c11fe8436c1caa8597439351: !Stride.BepuPhysics.Components.Colliders.SphereColliderComponent,Stride.BepuPhysics
+                        Id: ea4f48af-2ae1-4893-aa73-da50648cc417
+                        Mass: 1.0
+                        Radius: 0.5
+                    0ef14a7c3d3c811c8194bf597bd37be1: !MyGame6.GravityChange,MyGame6
+                        Id: f79d52a7-482d-42ab-80a5-7d39c9c4a7c3
+        -   Entity:
                 Id: bdbcf01a-865a-48c5-b2df-e961380c524e
                 Name: SphereBepu
                 Components:
@@ -99,8 +158,8 @@ Hierarchy:
                     a8b5694084ae2a84589c06bfcd96b981: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
                         Id: 5140623f-de26-4ce7-8d88-8f8c2fa2699b
                         SimulationIndex: 0
-                        SpringFrequency: 100.0
-                        SpringDampingRatio: 0.001
+                        SpringFrequency: 5.0
+                        SpringDampingRatio: 2.0
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
