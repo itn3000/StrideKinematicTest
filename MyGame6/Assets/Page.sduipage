@@ -9,6 +9,19 @@ Hierarchy:
         - !Grid ref!! aa748bfb-6bda-4505-9472-34c9d92729fd
     Parts:
         -   UIElement: !StackPanel
+                Id: 29f758ce-bbf7-4576-b96b-07ee02548d5f
+                DependencyProperties: {}
+                BackgroundColor: {R: 25, G: 207, B: 159, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SphereDampingRatio
+                Children:
+                    536f8193537d1089cf225913c47b8689: !TextBlock ref!! 6c200234-c056-415d-9037-1892c85ceaba
+                    6a23afa9dc0556c0504e8a87e7d40e87: !Slider ref!! 9b3d1438-8912-4ea2-9866-753227df27eb
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
                 Id: 2c473749-d9f0-4ef4-88f4-974602fa41f0
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
@@ -19,10 +32,36 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Children:
-                    159bdf934da2a64974b3225fcdf04384: !Slider ref!! f03c6930-99d6-4b54-9521-910be4162baf
-                    b431adcf59f88da2cea134a760a6bda9: !Slider ref!! 9b3d1438-8912-4ea2-9866-753227df27eb
+                    9921ebc4c057c0561b1688411745472a: !StackPanel ref!! 40095e6d-a6ca-4364-abe7-c3667df41698
+                    1484cb87975da65aa2ee4f3a9c5ebd40: !StackPanel ref!! 29f758ce-bbf7-4576-b96b-07ee02548d5f
                     607f107be35e55343cfe0ab86550b58d: !Slider ref!! bfdd6823-e7fb-4a5c-9688-75b64df69bc3
                     ee29b99e112e9803871580c7d9ed1445: !Slider ref!! 8ef56457-8f3d-40a4-84ed-365880050642
+        -   UIElement: !StackPanel
+                Id: 40095e6d-a6ca-4364-abe7-c3667df41698
+                DependencyProperties: {}
+                BackgroundColor: {R: 194, G: 43, B: 43, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SphereSpringStack
+                Children:
+                    704a5d10cae052184c63826bf1675e34: !TextBlock ref!! c519c152-5faf-437f-8c84-45e3e9b8141e
+                    713be0d0ad11774293a88e0a7c698410: !Slider ref!! f03c6930-99d6-4b54-9521-910be4162baf
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 6c200234-c056-415d-9037-1892c85ceaba
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SphereSpringDampingRatioLabel
+                Text: SphereSpringDampingRatio
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
         -   UIElement: !Slider
                 Id: 8ef56457-8f3d-40a4-84ed-365880050642
                 DependencyProperties: {}
@@ -99,7 +138,7 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Name: CubeSpringFrequency
-                Value: 30.0
+                Value: 1.0
                 Maximum: 100.0
                 TrackBackgroundImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -118,6 +157,19 @@ Hierarchy:
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
                     CurrentFrame: 8
                 TickOffset: 13.0
+        -   UIElement: !TextBlock
+                Id: c519c152-5faf-437f-8c84-45e3e9b8141e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SphereSpringFrequencyLabel
+                Text: SphereSprintFrequency
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
         -   UIElement: !Slider
                 Id: f03c6930-99d6-4b54-9521-910be4162baf
                 DependencyProperties: {}
@@ -128,7 +180,7 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Name: SphereSpringFrequency
-                Value: 30.0
+                Value: 1.0
                 Maximum: 100.0
                 TrackBackgroundImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
