@@ -66,6 +66,10 @@ Hierarchy:
                         Id: dc97b35d-9c48-4776-987f-9bb088a588c4
                         Mass: 1.0
                         Size: {X: 10.0, Y: 1.0, Z: 10.0}
+                    f66ccfb5086d2d49edfa7dd2ed79f11a: !MyGame6.DisplayBepuParameter,MyGame6
+                        Id: 0e7a43e7-29bc-48ca-87da-f76ef32d2531
+                        PositionY: 150
+                        PositionX: 10
         -   Entity:
                 Id: 4bda927a-4c1f-43fd-bb28-093df877e370
                 Name: Ground
@@ -158,8 +162,8 @@ Hierarchy:
                     a8b5694084ae2a84589c06bfcd96b981: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
                         Id: 5140623f-de26-4ce7-8d88-8f8c2fa2699b
                         SimulationIndex: 0
-                        SpringFrequency: 5.0
-                        SpringDampingRatio: 2.0
+                        SpringFrequency: 10.0
+                        SpringDampingRatio: 1.0
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
                         ColliderGroupMask: 255
@@ -175,6 +179,13 @@ Hierarchy:
                         Id: 9b4a632d-e213-430e-9623-1e8c31d82b28
                         Mass: 1.0
                         Radius: 0.5
+                    9c2d5e4f185e3304e3c42eb5cc567be4: !MyGame6.DisplayBepuParameter,MyGame6
+                        Id: 0c9692d6-ecc2-4e52-84bb-641e7d340288
+                        PositionY: 200
+                        PositionX: 10
+                    2063ee67c1ac7ad1c31a4c7232fa6602: !MyGame6.JumpScript,MyGame6
+                        Id: 7f8df4dc-4aba-411a-b288-2c61a02ea1b8
+                        JumpForce: 4.0
         -   Entity:
                 Id: e790b98e-fc9d-4df8-b4cb-2f2fe257cec2
                 Name: Camera

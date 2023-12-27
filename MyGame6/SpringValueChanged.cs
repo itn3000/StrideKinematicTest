@@ -26,23 +26,35 @@ namespace MyGame6
         {
             // Initialization of the script.
             var ui = Entity.Get<UIComponent>();
-            var sphereSpring = ui.Page.RootElement.FindVisualChildOfType<Slider>(SphereSpringFrequencyName);
-            sphereSpring.ValueChanged += SphereSpring_ValueChanged;
-            var sphereDampingRatio = ui.Page.RootElement.FindVisualChildOfType<Slider>(SphereSpringDampingRatioName);
-            sphereDampingRatio.ValueChanged += SphereDampingRatio_ValueChanged;
-            UpdateSphereProperty(ui);
-            var cubeEntity = FindCubeBepu();
-            SetupCubeMenu(ui, FindCubeBepu());
-            UpdateCubeProperty(ui, ui.Page.RootElement.FindVisualChildOfType<Slider>(CubeSpringFrequencyName), cubeEntity);
-            UpdateCubeProperty(ui, ui.Page.RootElement.FindVisualChildOfType<Slider>(CubeSpringDampingRatioName), cubeEntity);
+            SetupSphereMenu(ui);
+            SetupCubeMenu(ui);
+            //UpdateCubeProperty(ui.Page.RootElement.FindVisualChildOfType<Slider>(CubeSpringFrequencyName), cubeEntity);
+            //UpdateCubeProperty(ui.Page.RootElement.FindVisualChildOfType<Slider>(CubeSpringDampingRatioName), cubeEntity);
         }
 
-        void SetupCubeMenu(UIComponent ui, Entity cubeEntity)
+        void SetupSphereMenu(UIComponent ui)
         {
+            var sphereEntity = FindSphereBepu();
+            var sphereContainer = sphereEntity.Get<BodyContainerComponent>();
+            var sphereSpring = ui.Page.RootElement.FindVisualChildOfType<Slider>(SphereSpringFrequencyName);
+            sphereSpring.Value = sphereContainer.SpringFrequency;
+            sphereSpring.ValueChanged += SphereSpring_ValueChanged;
+            var sphereDampingRatio = ui.Page.RootElement.FindVisualChildOfType<Slider>(SphereSpringDampingRatioName);
+            sphereDampingRatio.Value = sphereContainer.SpringDampingRatio;
+            sphereDampingRatio.ValueChanged += SphereDampingRatio_ValueChanged;
+            UpdateSphereProperty(ui);
+        }
+
+        void SetupCubeMenu(UIComponent ui)
+        {
+            var cubeEntity = FindCubeBepu();
+            var cubeBody = cubeEntity.Get<BodyContainerComponent>();
             var cubeSpring = ui.Page.RootElement.FindVisualChildOfType<Slider>(CubeSpringFrequencyName);
-            cubeSpring.ValueChanged += (sender, ev) => UpdateCubeProperty(ui, ev.Source, cubeEntity);
+            cubeSpring.Value = cubeBody.SpringFrequency;
+            cubeSpring.ValueChanged += (sender, ev) => UpdateCubeProperty(ev.Source, cubeEntity);
             var cubeDampingRatio = ui.Page.RootElement.FindVisualChildOfType<Slider>(CubeSpringDampingRatioName);
-            cubeDampingRatio.ValueChanged += (sender, ev) => UpdateCubeProperty(ui, ev.Source, cubeEntity);
+            cubeDampingRatio.Value = cubeBody.SpringDampingRatio;
+            cubeDampingRatio.ValueChanged += (sender, ev) => UpdateCubeProperty(ev.Source, cubeEntity);
         }
 
         Entity FindCubeBepu()
@@ -54,7 +66,7 @@ namespace MyGame6
             return null;
         }
 
-        void UpdateCubeProperty(UIComponent ui, UIElement element, Entity cubeBepu)
+        void UpdateCubeProperty(UIElement element, Entity cubeBepu)
         {
             var bodycontainer = cubeBepu.Get<BodyContainerComponent>();
             if(element is Slider slider)
@@ -79,6 +91,10 @@ namespace MyGame6
 
         private void SphereSpring_ValueChanged(object sender, Stride.UI.Events.RoutedEventArgs e)
         {
+            if(e.Source is Slider slider)
+            {
+                Log.Info($"sphere spring freq value:{slider.Value}");
+            }
             var ui = Entity.Get<UIComponent>();
             UpdateSphereProperty(ui);
         }

@@ -39,7 +39,7 @@ Hierarchy:
         -   UIElement: !StackPanel
                 Id: 40095e6d-a6ca-4364-abe7-c3667df41698
                 DependencyProperties: {}
-                BackgroundColor: {R: 194, G: 43, B: 43, A: 0}
+                BackgroundColor: {R: 11, G: 10, B: 10, A: 0}
                 Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
@@ -96,7 +96,7 @@ Hierarchy:
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 DrawLayerNumber: 5
                 Margin: {}
-                MaximumWidth: 3.4028235E+38
+                MaximumWidth: 2000.0
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Name: SphereSpringDampingRatio
@@ -123,6 +123,9 @@ Hierarchy:
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
                 Children:
                     97beb86d8160bd8cc39f6b5c94167824: !StackPanel ref!! 2c473749-d9f0-4ef4-88f4-974602fa41f0
                 RowDefinitions: {}
@@ -161,6 +164,8 @@ Hierarchy:
                 Id: c519c152-5faf-437f-8c84-45e3e9b8141e
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Left
+                DepthAlignment: Back
                 Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
@@ -175,13 +180,17 @@ Hierarchy:
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 DrawLayerNumber: 5
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
+                HorizontalAlignment: Stretch
+                DepthAlignment: Front
+                Margin: {Right: 20.0}
+                MaximumWidth: 1500.0
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                DefaultWidth: 500.0
                 Name: SphereSpringFrequency
-                Value: 1.0
+                Value: 50.0
                 Maximum: 100.0
+                Step: 1.0
                 TrackBackgroundImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
                     CurrentFrame: 9
