@@ -13,7 +13,7 @@ namespace MyGame6
     public class JumpScript : SyncScript
     {
         // Declared public member fields and properties will show in the game studio
-        public float JumpForce = 6.0f;
+        public float JumpForce = 10.0f;
         public override void Start()
         {
             // Initialization of the script.

@@ -64,23 +64,13 @@ namespace MyGame6
             Entity.Transform.Position += moveVector;
             Entity.Transform.Rotation = rotation;
             var bodycontainer = Entity.Get<BodyContainerComponent>();
-            var collider = Entity.Get<Stride.BepuPhysics.Components.Colliders.BoxColliderComponent>();
-            
-            //bodycontainer.Position = Entity.Transform.Position;
-            //bodycontainer.Orientation = Entity.Transform.Rotation;
-            // kinematic rigidbody does not move without ApplyDescription?
-            var physicBody = bodycontainer.GetPhysicBody();
-            if(physicBody.HasValue)
-            {
-                var ph = physicBody.Value;
-                ph.GetDescription(out var description);
-                description.Pose.Position += new System.Numerics.Vector3(moveVector.X, moveVector.Y, moveVector.Z);
-                description.Pose.Orientation = new System.Numerics.Quaternion(rotation.X, rotation.Y, rotation.Z, rotation.W);
-                ph.ApplyDescription(description);
-                DebugText.Print($"{ph.Pose.Position}", new Int2(10, 40));
-            }
+            bodycontainer.Position += moveVector;
+            bodycontainer.Orientation = rotation;
+            //bodycontainer.Colliders[0].PositionLocal += moveVector;
+            bodycontainer.Awake = true;
+            var colliderpos = bodycontainer.Colliders[0].PositionLocal;
+            DebugText.Print($"bodycontainer position: {bodycontainer.Position}, colliderpos: {colliderpos}", new Int2(10, 40));
             Entity.Transform.UpdateWorldMatrix();
-            DebugText.Print($"{bodycontainer.Kinematic}, {collider.Size}, {bodycontainer.Entity.Transform.Position}", new Int2(10, 10));
         }
     }
 }

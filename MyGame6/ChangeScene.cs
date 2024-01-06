@@ -117,14 +117,7 @@ namespace MyGame6
                     if (entity.Name.EndsWith("Bepu"))
                     {
                         var container = entity.Get<Stride.BepuPhysics.Components.Containers.BodyContainerComponent>();
-                        var collider = entity.Get<Stride.BepuPhysics.Components.Colliders.BoxColliderComponent>();
-                        //var physic = container.GetPhysicBody();
-                        //if(physic.HasValue)
-                        //{
-                        //    physic.Value.Pose.Position = originalCubePosition.ToNumericVector();
-                        //    physic.Value.UpdateBounds();
-                        //}
-                        //physic.Value.UpdateBounds();
+                        container.Position = originalCubePosition;
                     }
                     if (entity.Name.EndsWith("Original"))
                     {

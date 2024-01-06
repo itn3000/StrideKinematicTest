@@ -38,6 +38,7 @@ Hierarchy:
                         ColliderFilterByDistanceY: 0
                         ColliderFilterByDistanceZ: 0
                         IgnoreGlobalGravity: false
+                        Colliders: {}
                     2d8c84b7d4e9c667ef22c9b28cbce130: !Stride.BepuPhysics.Components.Colliders.BoxColliderComponent,Stride.BepuPhysics
                         Id: ecb5506a-db64-4e11-b31f-184b6c5e0d60
                         Mass: 1.0
