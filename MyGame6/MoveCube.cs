@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
-using Stride.BepuPhysics.Components.Containers;
+using Stride.BepuPhysics;
 
 namespace MyGame6
 {
@@ -19,7 +19,7 @@ namespace MyGame6
             {
                 Log.Info($"sysname: {sys.Name}");
             }
-            var bodycontainer = Entity.Get<BodyContainerComponent>();
+            var bodycontainer = Entity.Get<BodyComponent>();
             Log.Info($"{bodycontainer.SimulationIndex}, {bodycontainer.Simulation.Enabled}, {bodycontainer.Simulation.PoseGravity}");
         }
 
@@ -61,14 +61,18 @@ namespace MyGame6
             {
                 rotation *= Quaternion.RotationZ(-rotateAmount);
             }
-            Entity.Transform.Position += moveVector;
+            //Entity.Transform.Position += moveVector;
             Entity.Transform.Rotation = rotation;
-            var bodycontainer = Entity.Get<BodyContainerComponent>();
-            bodycontainer.Position += moveVector;
+            var bodycontainer = Entity.Get<BodyComponent>();
+            bodycontainer.LinearVelocity += moveVector;
+            //bodycontainer.Position += moveVector;
             bodycontainer.Orientation = rotation;
             //bodycontainer.Colliders[0].PositionLocal += moveVector;
-            bodycontainer.Awake = true;
-            var colliderpos = bodycontainer.Colliders[0].PositionLocal;
+            if(!bodycontainer.Awake)
+            {
+                bodycontainer.Awake = true;
+            }
+            var colliderpos = bodycontainer.Position;
             DebugText.Print($"bodycontainer position: {bodycontainer.Position}, colliderpos: {colliderpos}", new Int2(10, 40));
             Entity.Transform.UpdateWorldMatrix();
         }

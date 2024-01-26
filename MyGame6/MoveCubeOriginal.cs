@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
-using Stride.BepuPhysics.Components.Containers;
+using Stride.BepuPhysics.Components;
 
 namespace MyGame6
 {

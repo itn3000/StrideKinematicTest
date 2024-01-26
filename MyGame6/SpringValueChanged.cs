@@ -8,7 +8,8 @@ using Stride.Input;
 using Stride.Engine;
 using Stride.UI;
 using Stride.UI.Controls;
-using Stride.BepuPhysics.Components.Containers;
+using Stride.BepuPhysics.Components;
+using Stride.BepuPhysics;
 
 namespace MyGame6
 {
@@ -35,7 +36,7 @@ namespace MyGame6
         void SetupSphereMenu(UIComponent ui)
         {
             var sphereEntity = FindSphereBepu();
-            var sphereContainer = sphereEntity.Get<BodyContainerComponent>();
+            var sphereContainer = sphereEntity.Get<Stride.BepuPhysics.ContainerComponent>();
             var sphereSpring = ui.Page.RootElement.FindVisualChildOfType<Slider>(SphereSpringFrequencyName);
             sphereSpring.Value = sphereContainer.SpringFrequency;
             sphereSpring.ValueChanged += SphereSpring_ValueChanged;
@@ -48,7 +49,7 @@ namespace MyGame6
         void SetupCubeMenu(UIComponent ui)
         {
             var cubeEntity = FindCubeBepu();
-            var cubeBody = cubeEntity.Get<BodyContainerComponent>();
+            var cubeBody = cubeEntity.Get<BodyComponent>();
             var cubeSpring = ui.Page.RootElement.FindVisualChildOfType<Slider>(CubeSpringFrequencyName);
             cubeSpring.Value = cubeBody.SpringFrequency;
             cubeSpring.ValueChanged += (sender, ev) => UpdateCubeProperty(ev.Source, cubeEntity);
@@ -68,7 +69,7 @@ namespace MyGame6
 
         void UpdateCubeProperty(UIElement element, Entity cubeBepu)
         {
-            var bodycontainer = cubeBepu.Get<BodyContainerComponent>();
+            var bodycontainer = cubeBepu.Get<BodyComponent>();
             if(element is Slider slider)
             {
                 if (element.Name == "CubeSpringFrequency")
@@ -103,7 +104,7 @@ namespace MyGame6
         {
             var sphereBepu = FindSphereBepu();
             SphereBepu = sphereBepu;
-            var bodycontainer = sphereBepu.Get<BodyContainerComponent>();
+            var bodycontainer = sphereBepu.Get<BodyComponent>();
             if (ui != null && bodycontainer != null)
             {
                 var sphereSpring = ui.Page.RootElement.FindVisualChildOfType<Slider>("SphereSpringFrequency");

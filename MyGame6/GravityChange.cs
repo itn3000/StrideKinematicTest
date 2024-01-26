@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
-using Stride.BepuPhysics.Components.Containers;
+using Stride.BepuPhysics;
 
 namespace MyGame6
 {
@@ -21,7 +21,7 @@ namespace MyGame6
 
         public override void Update()
         {
-            var container = Entity.Get<BodyContainerComponent>();
+            var container = Entity.Get<BodyComponent>();
             if (Entity.Transform.Position.Y < 4.0f)
             {
                 container.Simulation.PoseGravity = new Vector3(0, 9.8f, 0);

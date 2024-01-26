@@ -8,9 +8,9 @@ using Stride.Input;
 using Stride.Engine;
 using Stride.Core;
 using Stride.Physics;
-using Stride.BepuPhysics.Extensions;
 using Stride.Core.Serialization;
 using Stride.Core.DataSerializers;
+using Stride.BepuPhysics;
 
 namespace MyGame6
 {
@@ -116,7 +116,7 @@ namespace MyGame6
 
                     if (entity.Name.EndsWith("Bepu"))
                     {
-                        var container = entity.Get<Stride.BepuPhysics.Components.Containers.BodyContainerComponent>();
+                        var container = entity.Get<BodyComponent>();
                         container.Position = originalCubePosition;
                     }
                     if (entity.Name.EndsWith("Original"))

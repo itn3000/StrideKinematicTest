@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
-using Stride.BepuPhysics.Components.Containers;
+using Stride.BepuPhysics;
 
 namespace MyGame6
 {
@@ -23,7 +23,7 @@ namespace MyGame6
         {
             if(Input.IsKeyPressed(Keys.Space))
             {
-                var container = Entity.Get<BodyContainerComponent>();
+                var container = Entity.Get<BodyComponent>();
                 container.ApplyLinearImpulse(Vector3.UnitY * JumpForce);
             }
         }

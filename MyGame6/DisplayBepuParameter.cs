@@ -7,7 +7,7 @@ using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
 using FFmpeg.AutoGen.Native;
-using Stride.BepuPhysics.Components.Containers;
+using Stride.BepuPhysics;
 
 namespace MyGame6
 {
@@ -22,7 +22,7 @@ namespace MyGame6
 
         public override void Update()
         {
-            var bodycontainer = Entity.Get<BodyContainerComponent>();
+            var bodycontainer = Entity.Get<BodyComponent>();
             if(bodycontainer != null)
             {
                 DebugText.Print($"{bodycontainer.SpringFrequency},{bodycontainer.SpringDampingRatio}", new Int2(PositionX, PositionY));

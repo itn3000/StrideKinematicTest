@@ -28,8 +28,6 @@ Hierarchy:
                         Page: cdddb0b1-5d0f-4f5f-80d0-313e193b3074:Page
                         Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
                         Size: {X: 1.28, Y: 0.72, Z: 1.0}
-                    80dc86d7d5284df75587d30b892ad92d: !MyGame6.SpringValueChanged,MyGame6
-                        Id: 68603ac9-d8cf-4471-9d11-8f906c2a14f2
         -   Entity:
                 Id: 3af67246-5940-4afe-bd38-40c0e3da99a3
                 Name: CubeBepu
@@ -44,34 +42,35 @@ Hierarchy:
                         Id: 7269fc64-c440-41ba-8803-a40eadd1ed3e
                         Model: e3a6f02a-0692-46d2-9a7b-2599214f1ef8:Cube
                         Materials: {}
-                    eb4d0df2f69c1a1b8430e39e9b27136c: !MyGame6.MoveCube,MyGame6
-                        Id: e0f46dee-ca34-418b-8cba-6ebb29a0723f
-                    4da4800594fb7a84903459d87d720b05: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
-                        Id: 0ca2a69f-09a6-4519-aece-15d8e44e2e38
+                    2da45fedf5f1e6ffc00759e5a483902e: !Stride.BepuPhysics.BodyComponent,Stride.BepuPhysics
+                        Id: 2e06d9b5-d4b2-4565-8874-698349d71877
+                        Collider: !Stride.BepuPhysics.Definitions.Colliders.CompoundCollider,Stride.BepuPhysics
+                            Colliders:
+                                0b72ad4924cd9eb764904f978df2971a: !Stride.BepuPhysics.Definitions.Colliders.BoxCollider,Stride.BepuPhysics
+                                    Mass: 1.0
+                                    PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Size: {X: 10.0, Y: 1.0, Z: 10.0}
+                        ContactEventHandler: null
                         SimulationIndex: 0
                         SpringFrequency: 30.0
-                        SpringDampingRatio: 0.5
-                        FrictionCoefficient: 100.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
-                        ColliderGroupMask: 255
-                        ColliderFilterByDistanceId: 0
-                        ColliderFilterByDistanceX: 0
-                        ColliderFilterByDistanceY: 0
-                        ColliderFilterByDistanceZ: 0
-                        IgnoreGlobalGravity: false
+                        CollisionMask: Layer0
+                        FilterByDistance:
+                            Id: 0
+                            XAxis: 0
+                            YAxis: 0
+                            ZAxis: 0
                         Kinematic: true
-                        SleepThreshold: 0.0
+                        IgnoreGlobalGravity: false
+                        SleepThreshold: 0.01
                         MinimumTimestepCountUnderThreshold: 32
-                        Colliders:
-                            14e05c94a7f5be54a337f7b7b5701eab: !Stride.BepuPhysics.Definitions.Colliders.BoxCollider,Stride.BepuPhysics
-                                Mass: 1.0
-                                PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
-                                RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                Size: {X: 10.0, Y: 1.0, Z: 10.0}
-                    f66ccfb5086d2d49edfa7dd2ed79f11a: !MyGame6.DisplayBepuParameter,MyGame6
-                        Id: 0e7a43e7-29bc-48ca-87da-f76ef32d2531
-                        PositionY: 150
-                        PositionX: 10
+                        InterpolationMode: None
+                        ContinuousDetectionMode: Discrete
+                    15157c5007a4fa2acdc436c208ded857: !MyGame6.MoveCube,MyGame6
+                        Id: 0c0bb477-fdcb-42bd-8b52-8ad9cfb1b6af
         -   Entity:
                 Id: 4bda927a-4c1f-43fd-bb28-093df877e370
                 Name: Ground
@@ -86,25 +85,27 @@ Hierarchy:
                         Id: 26cdf200-65ec-44dc-ab70-f4cb8ec4b9d3
                         Model: ed3e837a-eafe-4506-adb8-4c811f96f990:Ground
                         Materials: {}
-                    f52f97b246590dadb4352f2136497f4b: !Stride.BepuPhysics.Components.Containers.StaticContainerComponent,Stride.BepuPhysics
-                        Id: 808bb91a-8455-4e6c-8d0c-160dfa304b26
+                    9407fd6f395e776621e176380a4202ea: !Stride.BepuPhysics.StaticComponent,Stride.BepuPhysics
+                        Id: 85388e84-6b4f-4f3c-acf4-426fbee47817
+                        Collider: !Stride.BepuPhysics.Definitions.Colliders.CompoundCollider,Stride.BepuPhysics
+                            Colliders:
+                                60e9918fc4d5777faaaab2926b01653a: !Stride.BepuPhysics.Definitions.Colliders.BoxCollider,Stride.BepuPhysics
+                                    Mass: 1.0
+                                    PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Size: {X: 100.0, Y: 0.1, Z: 100.0}
+                        ContactEventHandler: null
                         SimulationIndex: 0
                         SpringFrequency: 30.0
                         SpringDampingRatio: 3.0
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
-                        ColliderGroupMask: 255
-                        ColliderFilterByDistanceId: 0
-                        ColliderFilterByDistanceX: 0
-                        ColliderFilterByDistanceY: 0
-                        ColliderFilterByDistanceZ: 0
-                        IgnoreGlobalGravity: false
-                        Colliders:
-                            c276bea33d309f4fc120b3b5b067c92e: !Stride.BepuPhysics.Definitions.Colliders.BoxCollider,Stride.BepuPhysics
-                                Mass: 1.0
-                                PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
-                                RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                Size: {X: 10.0, Y: 1.0, Z: 10.0}
+                        CollisionMask: Layer0
+                        FilterByDistance:
+                            Id: 0
+                            XAxis: 0
+                            YAxis: 0
+                            ZAxis: 0
         -   Entity:
                 Id: 8244f640-5b90-48a3-b605-a63301c40469
                 Name: SphereBepu2
@@ -119,34 +120,6 @@ Hierarchy:
                         Id: 2e886f92-0097-4ff9-88d1-3e17f52ecc02
                         Model: 4372914f-4bd4-41eb-b1c2-efc6ef2b11a0:Sphere
                         Materials: {}
-                    d58b5b84e5651cfcf3674f00c1e5ea75: !MyGame6.DisplayPosition,MyGame6
-                        Id: 248ecb46-7fe1-4366-93bb-55e953b3194d
-                        PositionY: 80
-                        PositionX: 10
-                    a8b5694084ae2a84589c06bfcd96b981: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
-                        Id: 59f9cb4d-8f15-48d0-b387-229d54fd6e79
-                        SimulationIndex: 1
-                        SpringFrequency: 5.0
-                        SpringDampingRatio: 0.5
-                        FrictionCoefficient: 1.0
-                        MaximumRecoveryVelocity: 1000.0
-                        ColliderGroupMask: 255
-                        ColliderFilterByDistanceId: 0
-                        ColliderFilterByDistanceX: 0
-                        ColliderFilterByDistanceY: 0
-                        ColliderFilterByDistanceZ: 0
-                        IgnoreGlobalGravity: false
-                        Kinematic: false
-                        SleepThreshold: 0.01
-                        MinimumTimestepCountUnderThreshold: 32
-                        Colliders:
-                            b87c2d9fdcf2c145d7925bf0dacfc9b5: !Stride.BepuPhysics.Definitions.Colliders.SphereCollider,Stride.BepuPhysics
-                                Mass: 1.0
-                                PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
-                                RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                Radius: 0.5
-                    0ef14a7c3d3c811c8194bf597bd37be1: !MyGame6.GravityChange,MyGame6
-                        Id: f79d52a7-482d-42ab-80a5-7d39c9c4a7c3
         -   Entity:
                 Id: bdbcf01a-865a-48c5-b2df-e961380c524e
                 Name: SphereBepu
@@ -161,35 +134,36 @@ Hierarchy:
                         Id: 574f20b4-ea2b-41e3-96e5-eb564473cad7
                         Model: 4372914f-4bd4-41eb-b1c2-efc6ef2b11a0:Sphere
                         Materials: {}
-                    a8b5694084ae2a84589c06bfcd96b981: !Stride.BepuPhysics.Components.Containers.BodyContainerComponent,Stride.BepuPhysics
-                        Id: 5140623f-de26-4ce7-8d88-8f8c2fa2699b
+                    455373eeae445b2cd42f1595347f9776: !Stride.BepuPhysics.BodyComponent,Stride.BepuPhysics
+                        Id: c4457b61-2728-4b9a-b911-e0967180d464
+                        Collider: !Stride.BepuPhysics.Definitions.Colliders.CompoundCollider,Stride.BepuPhysics
+                            Colliders:
+                                42017725484789c1e83369ee50862dfc: !Stride.BepuPhysics.Definitions.Colliders.SphereCollider,Stride.BepuPhysics
+                                    Mass: 1.0
+                                    PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Radius: 0.5
+                        ContactEventHandler: null
                         SimulationIndex: 0
-                        SpringFrequency: 10.0
-                        SpringDampingRatio: 1.0
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
-                        ColliderGroupMask: 255
-                        ColliderFilterByDistanceId: 0
-                        ColliderFilterByDistanceX: 0
-                        ColliderFilterByDistanceY: 0
-                        ColliderFilterByDistanceZ: 0
-                        IgnoreGlobalGravity: false
+                        CollisionMask: Layer0
+                        FilterByDistance:
+                            Id: 0
+                            XAxis: 0
+                            YAxis: 0
+                            ZAxis: 0
                         Kinematic: false
+                        IgnoreGlobalGravity: false
                         SleepThreshold: 0.01
                         MinimumTimestepCountUnderThreshold: 32
-                        Colliders:
-                            8fb4646f3a3b9edddf7e2e7d684d9519: !Stride.BepuPhysics.Definitions.Colliders.SphereCollider,Stride.BepuPhysics
-                                Mass: 1.0
-                                PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
-                                RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                Radius: 0.5
-                    9c2d5e4f185e3304e3c42eb5cc567be4: !MyGame6.DisplayBepuParameter,MyGame6
-                        Id: 0c9692d6-ecc2-4e52-84bb-641e7d340288
-                        PositionY: 200
-                        PositionX: 10
-                    2063ee67c1ac7ad1c31a4c7232fa6602: !MyGame6.JumpScript,MyGame6
-                        Id: 7f8df4dc-4aba-411a-b288-2c61a02ea1b8
-                        JumpForce: 4.0
+                        InterpolationMode: None
+                        ContinuousDetectionMode: Discrete
+                    fa8683cb861da8a9db7d33c6737b8ee3: !MyGame6.JumpScript,MyGame6
+                        Id: c8b83512-7be5-4ea2-bafd-3578002a1778
+                        JumpForce: 10.0
         -   Entity:
                 Id: e790b98e-fc9d-4df8-b4cb-2f2fe257cec2
                 Name: Camera
